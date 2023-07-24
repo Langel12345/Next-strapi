@@ -6,3 +6,4 @@ export * from  './BarTruts';
 export * from  './GridGames';
 export * from './BannerAdd';
 export * from './NoResult';
+export * from './Pagination';

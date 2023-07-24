@@ -5,13 +5,16 @@ import {ENV} from '@/utils'
 import styles from './Menu.module.scss'
 import {map} from 'lodash';
 import Link from 'next/link';
+
 import classNames from 'classnames';
+import { useRouter } from 'next/router';
 const platformsCtrl = new Platforms();
 export function Menu(props) {
     const {isOpenSearch} = props;
     const [platforms, setPlatforms] = useState(null);
-    const [showSearch, setShowSearch] = useState(false);
-
+    const [showSearch, setShowSearch] = useState(isOpenSearch);
+    const [searchText , setsearchText  ] = useState("")
+    const router = useRouter();
     const openCloseSearch = () => setShowSearch(prevState => !prevState);
     useEffect(() => {
         (async () =>{
@@ -24,7 +27,14 @@ export function Menu(props) {
         })();
     }, [])
     
+    useEffect(() => {
+        setsearchText(router.query.s || "")
+    }, [])
     
+    const onSearch =(text)=>{
+        setsearchText(text)
+        router.replace(`/search?s=${text}`)
+    }
     return (
         <div className={styles.platforms}>
             { map(platforms, (platform)=>(
@@ -39,7 +49,14 @@ export function Menu(props) {
             <div  className={classNames(styles.inputContainer,{
                 [styles.active] : showSearch
             })}>
-                <Input id="search-games" placeholder="Buscador" className={styles.input} focus={true}/>
+                <Input 
+                    id="search-games" 
+                    placeholder="Buscador" 
+                    className={styles.input} 
+                    focus={true}
+                    value={searchText}
+                    onChange={(_, data) => onSearch(data.value)}
+                />
                 <Icon name="close" className={styles.closeInput}  onClick={openCloseSearch} />
             </div>
         </div>
