@@ -6,7 +6,6 @@ import { BasicLayout } from '@/layouts';
 export default function SearchPage(props) {
     const {games,pagination,searchText} = props;
     const hastResult = size(games) > 0;
-    console.log(hastResult)
     useEffect(() => {
         document.getElementById("search-games").focus()
     }, [])

@@ -10,7 +10,9 @@ export const ENV={
         USERS:"users",
         PLATFORM:"plataforms",
         ADDRESS:"addresses",
-        GAME:"games"
+        GAME:"games",
+        WISHLIST:"wishlists"
     },
     TOKEN:"token",
+    CART:"cart"
 }

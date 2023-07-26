@@ -7,3 +7,5 @@ export * from  './GridGames';
 export * from './BannerAdd';
 export * from './NoResult';
 export * from './Pagination';
+export * from './WishlistIcon';
+export * from './FullModal';

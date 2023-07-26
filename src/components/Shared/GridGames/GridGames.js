@@ -6,7 +6,7 @@ import { Label } from '@/components/Shared'
 
 export  function GridGames(props) {
     const { games} = props;
-    console.log(games)
+  
     return (
         <div className={styels.gridGames}>
             {map(games,(game)=>(
