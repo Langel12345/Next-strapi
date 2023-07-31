@@ -13,6 +13,7 @@ export default function HomePage() {
   }
   return (
     <>
+      
       <BasicLayout>
           <Home.BannerLastGame />
           <Separator height={100} />

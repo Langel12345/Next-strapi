@@ -11,8 +11,11 @@ export const ENV={
         PLATFORM:"plataforms",
         ADDRESS:"addresses",
         GAME:"games",
-        WISHLIST:"wishlists"
+        WISHLIST:"wishlists",
+        PAYMENT_ORDER:"payment-order",
+        ORDERS:"orders"
     },
     TOKEN:"token",
-    CART:"cart"
+    CART:"cart",
+    STRIPE_TOKEN:"pk_test_51NYsbqEU1itYkmMAia4GfAJextBmeEL6ZaIj0pFCh9KbGyKarx9ZZN5MdsyHlPucTFMLmRRBqbjzeSmkpKUnuvTT00SIqcUTHb"
 }
